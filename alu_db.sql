@@ -27,24 +27,3 @@ WHERE building = 'Main Block';
 DELETE FROM Classroom
 WHERE classroom_id = 7;
 
-
---Member 5: Bob (Student_Courses junction table)
-
-CREATE TABLE Student_Courses (
-    student_id INT NOT NULL,
-    course_id INT NOT NULL,
-    enrollment_date DATE NOT NULL,
-    PRIMARY KEY (student_id, course_id),
-    FOREIGN KEY (student_id) REFERENCES Students(student_id),
-    FOREIGN KEY (course_id) REFERENCES Courses(course_id)
-);
-
-INSERT INTO Student_Courses (student_id, course_id, enrollment_date) VALUES
-(1, 1, '2024-09-05'),
-(1, 2, '2024-09-05'),
-(2, 1, '2024-09-05'),
-(3, 3, '2024-09-06'),
-(4, 4, '2024-09-06'),
-(5, 5, '2024-09-07'),
-(6, 1, '2024-09-07'),
-(2, 5, '2024-09-07');
