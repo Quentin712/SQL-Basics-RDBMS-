@@ -135,6 +135,8 @@ CREATE TABLE Student_Courses (
     FOREIGN KEY (course_id) REFERENCES Courses(course_id)
 );
 
+-- Member 5 Boromeon: Student_Courses Junction Table
+
 INSERT INTO Student_Courses (student_id, course_id, enrollment_date) VALUES
 (1, 1, '2024-09-05'),
 (1, 2, '2024-09-05'),
