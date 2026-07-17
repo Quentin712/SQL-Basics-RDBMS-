@@ -136,14 +136,6 @@ CREATE TABLE Student_Courses (
 );
 
 -- Member 5 Boromeon: Student_Courses Junction Table
-CREATE TABLE Student_Courses (
-    student_id INT NOT NULL,
-    course_id INT NOT NULL,
-    enrollment_date DATE NOT NULL,
-    PRIMARY KEY (student_id, course_id),
-    FOREIGN KEY (student_id) REFERENCES Students(student_id),
-    FOREIGN KEY (course_id) REFERENCES Courses(course_id)
-);
 
 INSERT INTO Student_Courses (student_id, course_id, enrollment_date) VALUES
 (1, 1, '2024-09-05'),
