@@ -27,3 +27,24 @@ WHERE building = 'Main Block';
 DELETE FROM Classroom
 WHERE classroom_id = 7;
 
+-- Member 2: Yannis (Faculty Table)
+CREATE TABLE Faculty (
+    faculty_id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(100) NOT NULL,
+    email VARCHAR(100) NOT NULL UNIQUE,
+    department VARCHAR(50) NOT NULL
+);
+
+INSERT INTO Faculty (name, email, department) VALUES
+('Aline Uwase', 'aline.uwase@alu.edu', 'Computer Science'),
+('Kwame Boateng', 'kwame.boateng@alu.edu', 'Business'),
+('Naledi Dlamini', 'naledi.dlamini@alu.edu', 'Engineering'),
+('Samuel Otieno', 'samuel.otieno@alu.edu', 'Mathematics'),
+('Grace Mwangi', 'grace.mwangi@alu.edu', 'Global Challenges'),
+('Retired Faculty', 'retired@alu.edu', 'Unassigned');
+
+UPDATE Faculty SET department = 'Computer Science & AI' WHERE faculty_id = 1;
+
+DELETE FROM Faculty WHERE faculty_id = 6;
+
+SELECT * FROM Faculty WHERE department = 'Business';
