@@ -1,4 +1,4 @@
--- Member 1: Lizza (Classroom Table)
+ii Member 1: Lizza (Classroom Table)
 
 CREATE TABLE Classroom (
 	classroom_id INT PRIMARY KEY,
@@ -48,3 +48,27 @@ UPDATE Faculty SET department = 'Computer Science & AI' WHERE faculty_id = 1;
 DELETE FROM Faculty WHERE faculty_id = 6;
 
 SELECT * FROM Faculty WHERE department = 'Business';
+--- Member Fatima (Student Table)
+CREATE TABLE Students (
+	student_id INT AUTO_INCREMENT PRIMARY KEY,
+	name VARCHAR(100) NOT NULL,
+	email VARCHAR(100) NOT NULL UNIQUE,
+	classroom_id INT,
+	enrollment_date DATE NOT NULL,
+        FOREIGN KEY (classroom_id) REFERENCES Classroom(classroom_id)
+);
+INSERT INTO Students (name, email, classroom_id, enrollment_date) VALUES
+('Quentin Habimana','quentin.h@alu.edu', 1, '2024-09-01'),
+('Bob Niyonzima', 'bob.n@alu.edu', 2, '2024-09-01'),
+('Philbert Nkurunziza', 'philbert.n@alu.edu', 3, '2024-09-02'),
+('Lizza Umutoni', 'lizza.u@alu.edu', 1, '2024-09-02'),
+('Fatima Abdi', 'fatima.a@alu.edu', 4, '2024-09-03'),
+('Yannick Ishimwe', 'yannick.i@alu.edu', 5, '2024-09-03'),
+('Test Student', 'delete.me@alu.edu', 2, '2024-09-03');
+
+
+
+UPDATE Students SET email = 'bob.niyonzima2@alu.edu' Where student_id = 2;
+DELETE FROM Students WHERE student_id = 7;
+SELECT * FROM Students WHERE classroom_id = 1;
+
