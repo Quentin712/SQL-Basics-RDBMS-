@@ -97,3 +97,32 @@ DELETE FROM Courses WHERE course_id = 6;
 
 SELECT * FROM Courses WHERE faculty_id = 1;
 
+-- Member 5 Philbert: Extra_Curricular_Activities Table
+
+
+CREATE TABLE Extra_Curricular_Activities (
+    activity_id INT AUTO_INCREMENT PRIMARY KEY,
+    activity_name VARCHAR(100) NOT NULL,
+    category VARCHAR(50) NOT NULL,
+    faculty_advisor_id INT,
+    FOREIGN KEY (faculty_advisor_id) REFERENCES Faculty(faculty_id)
+);
+
+INSERT INTO Extra_Curricular_Activities (activity_name, category, faculty_advisor_id) VALUES
+('Coding Club', 'Technology', 1),
+('Entrepreneurship Society', 'Business', 2),
+('Robotics Team', 'Technology', 3),
+('Debate Club', 'Academic', 5),
+('Football Club', 'Sports', 4),
+('Placeholder Club', 'Unassigned', 1);
+
+UPDATE Extra_Curricular_Activities
+SET category = 'STEM'
+WHERE activity_id = 3;
+
+DELETE FROM Extra_Curricular_Activities
+WHERE activity_id = 6;
+
+SELECT *
+FROM Extra_Curricular_Activities
+WHERE category = 'Technology';
