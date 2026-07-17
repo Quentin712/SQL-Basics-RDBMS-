@@ -1,4 +1,4 @@
-ii Member 1: Lizza (Classroom Table)
+-- Member 1: Lizza (Classroom Table)
 
 CREATE TABLE Classroom (
 	classroom_id INT PRIMARY KEY,
@@ -71,4 +71,29 @@ INSERT INTO Students (name, email, classroom_id, enrollment_date) VALUES
 UPDATE Students SET email = 'bob.niyonzima2@alu.edu' Where student_id = 2;
 DELETE FROM Students WHERE student_id = 7;
 SELECT * FROM Students WHERE classroom_id = 1;
+
+-- Member Quentin Courses Table
+CREATE TABLE Courses (
+    course_id INT AUTO_INCREMENT PRIMARY KEY,
+    course_name VARCHAR(100) NOT NULL,
+    credits INT NOT NULL,
+    faculty_id INT,
+    classroom_id INT,
+    FOREIGN KEY (faculty_id) REFERENCES Faculty(faculty_id),
+    FOREIGN KEY (classroom_id) REFERENCES Classroom(classroom_id)
+);
+
+INSERT INTO Courses (course_name, credits, faculty_id, classroom_id) VALUES
+('Database Systems', 4, 1, 1),
+('Intro to Business', 3, 2, 2),
+('Structural Engineering', 4, 3, 3),
+('Calculus II', 3, 4, 4),
+('Global Challenges Seminar', 2, 5, 5),
+('Placeholder Course', 1, 1, 1);
+
+UPDATE Courses SET credits = 5 WHERE course_id = 3;
+
+DELETE FROM Courses WHERE course_id = 6;
+
+SELECT * FROM Courses WHERE faculty_id = 1;
 
