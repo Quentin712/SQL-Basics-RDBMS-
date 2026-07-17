@@ -97,7 +97,7 @@ DELETE FROM Courses WHERE course_id = 6;
 
 SELECT * FROM Courses WHERE faculty_id = 1;
 
--- Member 5 Philbert: Extra_Curricular_Activities Table
+-- Member Philbert: Extra_Curricular_Activities Table
 
 
 CREATE TABLE Extra_Curricular_Activities (
@@ -146,3 +146,34 @@ INSERT INTO Student_Courses (student_id, course_id, enrollment_date) VALUES
 (5, 5, '2024-09-07'),
 (6, 1, '2024-09-07'),
 (2, 5, '2024-09-07');
+
+
+-- Member Philbert: Student_Activities Junction Table
+
+CREATE TABLE Student_Activities (
+    student_id INT NOT NULL,
+    activity_id INT NOT NULL,
+    joined_date DATE NOT NULL,
+    PRIMARY KEY (student_id, activity_id),
+    FOREIGN KEY (student_id) REFERENCES Students(student_id),
+    FOREIGN KEY (activity_id) REFERENCES Extra_Curricular_Activities(activity_id)
+);
+
+INSERT INTO Student_Activities (student_id, activity_id, joined_date) VALUES
+(1, 1, '2024-09-10'),
+(2, 2, '2024-09-10'),
+(3, 3, '2024-09-11'),
+(4, 4, '2024-09-11'),
+(5, 1, '2024-09-12'),
+(6, 3, '2024-09-12');
+
+UPDATE Student_Activities
+SET joined_date = '2024-10-01'
+WHERE student_id = 1 AND activity_id = 1;
+
+DELETE FROM Student_Activities
+WHERE student_id = 6 AND activity_id = 3;
+
+SELECT *
+FROM Student_Activities
+WHERE activity_id = 3;
