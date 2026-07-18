@@ -1,5 +1,5 @@
 CREATE DATABASE IF NOT EXISTS group4_alu_db; 
-USE group4_alu-db;
+USE group4_alu_db;
 
 
 -- Member 1: Lizza (Classroom Table)
