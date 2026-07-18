@@ -54,7 +54,7 @@ DELETE FROM Faculty WHERE faculty_id = 6;
 SELECT * FROM Faculty WHERE department = 'Business';
 
 
---- Member Fatima (Student Table)
+-- Member Fatima (Student Table)
 CREATE TABLE Students (
 	student_id INT AUTO_INCREMENT PRIMARY KEY,
 	name VARCHAR(100) NOT NULL,
