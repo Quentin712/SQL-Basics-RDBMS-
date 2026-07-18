@@ -3,7 +3,7 @@ USE group4_alu_db;
 
 
 -- Member 1: Lizza (Classroom Table)
-CREATE TABLE Classroom (
+CREATE TABLE IF NOT EXISTS Students (
 	classroom_id INT PRIMARY KEY,
 	room_number VARCHAR(15),
 	building VARCHAR(20),
