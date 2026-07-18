@@ -135,7 +135,7 @@ WHERE category = 'Technology';
 
 
 -- Member 5 Boromeon: Student_Courses Junction Table
-CREATE TABLE Student_Courses (
+CREATE TABLE IF NOT EXISTS Student_Courses (
     student_id INT NOT NULL,
     course_id INT NOT NULL,
     enrollment_date DATE NOT NULL,
@@ -156,7 +156,7 @@ INSERT INTO Student_Courses (student_id, course_id, enrollment_date) VALUES
 
 
 -- Member Philbert: Student_Activities Junction Table
-CREATE TABLE Student_Activities (
+CREATE TABLE IF NOT EXISTS Student_Activities (
     student_id INT NOT NULL,
     activity_id INT NOT NULL,
     joined_date DATE NOT NULL,
