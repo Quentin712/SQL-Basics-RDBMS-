@@ -1,6 +1,6 @@
 ## 🏫 Group [Team Name] — ALU School Database
 
-A group assignment for ALU — a shared MySQL database for a school system, built by a team of six, with each member responsible for one table connected together into a single relational schema.
+A group assignment for ALU  a shared MySQL database for a school system, built by a team of six, with each member responsible for one table connected together into a single relational schema.
 
 ---
 
