@@ -3,7 +3,6 @@ USE group4_alu_db;
 
 
 -- Member 1: Lizza (Classroom Table)
-
 CREATE TABLE Classroom (
 	classroom_id INT PRIMARY KEY,
 	room_number VARCHAR(15),
@@ -31,6 +30,7 @@ WHERE building = 'Main Block';
 DELETE FROM Classroom
 WHERE classroom_id = 7;
 
+
 -- Member 2: Yannis (Faculty Table)
 CREATE TABLE Faculty (
     faculty_id INT AUTO_INCREMENT PRIMARY KEY,
@@ -52,6 +52,8 @@ UPDATE Faculty SET department = 'Computer Science & AI' WHERE faculty_id = 1;
 DELETE FROM Faculty WHERE faculty_id = 6;
 
 SELECT * FROM Faculty WHERE department = 'Business';
+
+
 --- Member Fatima (Student Table)
 CREATE TABLE Students (
 	student_id INT AUTO_INCREMENT PRIMARY KEY,
@@ -75,6 +77,7 @@ INSERT INTO Students (name, email, classroom_id, enrollment_date) VALUES
 UPDATE Students SET email = 'bob.niyonzima2@alu.edu' Where student_id = 2;
 DELETE FROM Students WHERE student_id = 7;
 SELECT * FROM Students WHERE classroom_id = 1;
+
 
 -- Member Quentin Courses Table
 CREATE TABLE Courses (
@@ -101,9 +104,8 @@ DELETE FROM Courses WHERE course_id = 6;
 
 SELECT * FROM Courses WHERE faculty_id = 1;
 
+
 -- Member Philbert: Extra_Curricular_Activities Table
-
-
 CREATE TABLE Extra_Curricular_Activities (
     activity_id INT AUTO_INCREMENT PRIMARY KEY,
     activity_name VARCHAR(100) NOT NULL,
@@ -130,6 +132,9 @@ WHERE activity_id = 6;
 SELECT *
 FROM Extra_Curricular_Activities
 WHERE category = 'Technology';
+
+
+-- Member 5 Boromeon: Student_Courses Junction Table
 CREATE TABLE Student_Courses (
     student_id INT NOT NULL,
     course_id INT NOT NULL,
@@ -138,8 +143,6 @@ CREATE TABLE Student_Courses (
     FOREIGN KEY (student_id) REFERENCES Students(student_id),
     FOREIGN KEY (course_id) REFERENCES Courses(course_id)
 );
-
--- Member 5 Boromeon: Student_Courses Junction Table
 
 INSERT INTO Student_Courses (student_id, course_id, enrollment_date) VALUES
 (1, 1, '2024-09-05'),
@@ -153,7 +156,6 @@ INSERT INTO Student_Courses (student_id, course_id, enrollment_date) VALUES
 
 
 -- Member Philbert: Student_Activities Junction Table
-
 CREATE TABLE Student_Activities (
     student_id INT NOT NULL,
     activity_id INT NOT NULL,
