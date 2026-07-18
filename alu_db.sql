@@ -55,7 +55,7 @@ SELECT * FROM Faculty WHERE department = 'Business';
 
 
 -- Member Fatima (Student Table)
-CREATE TABLE Students (
+CREATE TABLE IF NOT EXISTS Students (
 	student_id INT AUTO_INCREMENT PRIMARY KEY,
 	name VARCHAR(100) NOT NULL,
 	email VARCHAR(100) NOT NULL UNIQUE,
